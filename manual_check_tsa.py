@@ -1,6 +1,14 @@
-import class_model
+from class_model import model
 
-class manualCheck(class_model.model):
+import numpy as np
+import pandas as pd
+
+from statsmodels.tsa.stattools import adfuller
+from statsmodels.tsa.stattools import kpss
+from statsmodels.tsa.filters.hp_filter import hpfilter
+from statsmodels.tsa.seasonal import seasonal_decompose
+
+class manualCheck(model):
      '''Helper Functions to test Stationarity, with ADF and/or KPSS, of the series'''
 
     def ADF_test (self, series):    

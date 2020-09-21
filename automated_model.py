@@ -1,6 +1,20 @@
-import class_model
+from class_model import model
 
-class automation(class_model.model):
+#Calculation and data manipulation related
+import numpy as np
+import pandas as pd
+
+#Time Series related
+from scipy.stats import kruskal
+import pymannkendall as mk
+from statsmodels.tsa.api import ExponentialSmoothing, SimpleExpSmoothing
+from pmdarima.arima import auto_arima 
+from statsmodels.tsa.arima_model import ARIMA
+from statsmodels.tsa.statespace.sarimax import SARIMAX
+
+
+
+class automation(model):
     
     '''Replacing and detection of outliers by calculating the deviation of a datapoint from the mean of that series
         that are greater than 3 * std.
